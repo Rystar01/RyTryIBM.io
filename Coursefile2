@@ -1,0 +1,21 @@
+#Course workflow
+print("this time i'm gonna go a little further!")
+import tkinter as tk
+import time
+
+def update_clock():
+    current_time = time.strftime("%H:%M:%S")
+    label.config(text=current_time)
+    label.after(1000, update_clock)
+
+# Setup window
+root = tk.Tk()
+root.title("Digital Clock")
+root.configure(bg="black")
+
+# Modern Label Style
+label = tk.Label(root, font=("Helvetica", 48, "bold"), fg="cyan", bg="black")
+label.pack(pady=20, padx=20)
+
+update_clock()  # Start updating time
+root.mainloop()
